@@ -1,0 +1,293 @@
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.bg-app {
+  background-color: #c20a34;
+}
+
+.bg-black {
+  background-color: black;
+}
+
+.text-app {
+  color: #c20a34;
+}
+
+.bg-app-secondary {
+  background-color: #1e1f29;
+}
+
+.hero-container {
+  background: rgba(242, 122, 80, 0.3);
+}
+
+@media (max-width: 660px) {
+  .hero-container {
+    padding-left: 175px;
+    margin-bottom: 20px;
+    min-height: auto;
+    padding: 5px 20px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .hero-container {
+    min-height: 400px;
+  }
+}
+
+.h-full {
+  height: 100%;
+}
+
+.footer {
+  background: url("/images/bg.PNG");
+}
+
+p {
+  margin: 0px;
+}
+
+.text-times {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.text-arial {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.font-14 {
+  font-size: 14px;
+}
+
+.font-12 {
+  font-size: 12px;
+}
+
+.font-13 {
+  font-size: 13px;
+}
+
+.font-16 {
+  font-size: 16px;
+}
+
+.font-18 {
+  font-size: 18px;
+}
+
+.font-19 {
+  font-size: 19px;
+}
+
+.font-20 {
+  font-size: 20px;
+}
+
+.font-22 {
+  font-size: 22px;
+}
+
+.app-btn {
+  border: 1px white;
+  padding: 5px 10px;
+  background-color: #c20a34;
+  color: white;
+  -webkit-transition: background-color 300ms ease-in, color 300ms ease-in, border 300ms ease-in;
+  transition: background-color 300ms ease-in, color 300ms ease-in, border 300ms ease-in;
+}
+
+.app-btn:hover {
+  background: white;
+  color: #c20a34;
+  border: 1px solid #c20a34;
+}
+
+.price-flex-div {
+  min-height: 30px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #c20a34;
+  border-radius: 0% 8% 8% 0%;
+}
+
+.price-flex-div .arrow-div {
+  width: 22px;
+  height: 22px;
+  -webkit-transform: rotate(132deg);
+          transform: rotate(132deg);
+  position: relative;
+  right: 15px;
+}
+
+.footer-group-item {
+  list-style-type: none;
+}
+
+.footer-group-item li {
+  padding: 4px 6px;
+}
+
+.text-sans {
+  font-family: sans-serif;
+}
+
+.text-grey {
+  color: #a3a9af;
+}
+
+.cart-card .cart-header {
+  height: 100px;
+  overflow: hidden;
+  background-color: #c20a34;
+}
+
+.cart-card .cart-header button {
+  width: 50%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.cart-row:nth-child(odd) {
+  background-color: rgba(209, 166, 166, 0.3);
+}
+
+.cart-row:nth-child(even) {
+  background-color: #f4f4f4;
+}
+
+.cart-row {
+  padding: 5px 0px;
+}
+
+.order-row:nth-child(odd) {
+  background-color: rgba(209, 166, 166, 0.3);
+}
+
+.order-row:nth-child(even) {
+  background-color: rgba(167, 193, 206, 0.3);
+}
+
+#productsDetailsImageContainer {
+  padding: 3px;
+  min-height: 620px;
+}
+
+@media (max-width: 660px) {
+  #productsDetailsImageContainer {
+    min-height: 230px;
+  }
+}
+
+@media (min-width: 410px) {
+  #productsDetailsImageContainer {
+    min-height: 300px;
+  }
+}
+
+@media (min-width: 766px) and (max-width: 990px) {
+  #productsDetailsImageContainer {
+    min-height: 230px;
+  }
+}
+
+@media (min-width: 1100px) {
+  #productsDetailsImageContainer {
+    min-height: 420px;
+  }
+}
+
+#productDetailsImageCol {
+  position: relative;
+}
+
+#productDetailsImageCol #productDetailsImageDiv {
+  position: absolute;
+}
+
+.search-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 100;
+}
+
+.search-container .search-div {
+  background-color: #fff;
+  width: 100%;
+  height: 100vh;
+  padding: 2px 13px;
+}
+
+@media (min-width: 660px) {
+  .search-container .search-div {
+    width: 70vw;
+  }
+}
+
+@media (min-width: 766px) and (max-width: 990px) {
+  .search-container .search-div {
+    width: 60vw;
+  }
+}
+
+@media (min-width: 1100px) {
+  .search-container .search-div {
+    width: 50vw;
+  }
+}
+
+.search-container .search-div .search-input {
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #cac7c7;
+  width: 100%;
+}
+
+.search-container .search-div .closeBtn {
+  border: none;
+  background-color: inherit;
+}
+
+.text-serif {
+  font-family: serif;
+}
+
+@media (max-width: 660px) {
+  .authDiv {
+    width: 100%;
+    padding: 40px;
+  }
+}
+
+.authDiv input {
+  width: 100%;
+}
+
+@media (max-width: 660px) {
+  .authDiv input {
+    width: 70%;
+  }
+}
+/*# sourceMappingURL=main.css.map */

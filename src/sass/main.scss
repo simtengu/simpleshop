@@ -1,0 +1,262 @@
+@import "variables";
+body {
+  padding: 0px;
+  margin: 0px;
+}
+html {
+  scroll-behavior: smooth;
+}
+.bg-app {
+  background-color: $primary;
+}
+.bg-black {
+  background-color: black;
+}
+.text-app {
+  color: $primary;
+}
+
+.bg-app-secondary {
+  background-color: $secondary;
+}
+
+.hero-container {
+  background: rgba(242, 122, 80, 0.3);
+
+  @media ($phone) {
+    padding-left: 175px;
+    margin-bottom: 20px;
+    min-height: auto;
+    padding: 5px 20px;
+  }
+
+  @media ($laptop) {
+    min-height: 400px;
+  }
+}
+
+.h-full {
+  height: 100%;
+}
+
+.footer {
+  background: url("/images/bg.PNG");
+}
+p {
+  margin: 0px;
+}
+
+.text-times {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.text-arial {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.font-14 {
+  font-size: 14px;
+}
+.font-12 {
+  font-size: 12px;
+}
+.font-13 {
+  font-size: 13px;
+}
+
+.font-16 {
+  font-size: 16px;
+}
+
+.font-18 {
+    font-size: 18px;
+}
+.font-19 {
+    font-size: 19px;
+}
+
+.font-20 {
+  font-size: 20px;
+}
+
+.font-22 {
+  font-size: 22px;
+}
+
+.app-btn {
+  border: 1px white;
+  padding: 5px 10px;
+  background-color: $primary;
+  color: white;
+  transition: background-color 300ms ease-in, color 300ms ease-in,
+    border 300ms ease-in;
+  &:hover {
+    background: white;
+    color: $primary;
+    border: 1px solid $primary;
+  }
+}
+
+.price-flex-div {
+  min-height: 30px;
+  width: fit-content;
+  background-color: $primary;
+  border-radius: 0% 8% 8% 0%;
+
+  .arrow-div {
+    width: 22px;
+    height: 22px;
+    transform: rotate(132deg);
+    position: relative;
+    right: 15px;
+  }
+}
+
+.footer-group-item {
+  list-style-type: none;
+  li {
+    padding: 4px 6px;
+  }
+}
+
+.text-sans {
+  font-family: sans-serif;
+}
+.text-grey {
+  color: #a3a9af;
+}
+
+.cart-card {
+  // border-radius: 10% 10% 0% 0%;
+
+  .cart-header {
+    // border-radius: 10% 10% 0% 0%;
+    height: 100px;
+    overflow: hidden;
+    background-color: $primary;
+    button {
+      width: 50%;
+      height: 100%;
+      background-color: transparent;
+      border: none;
+    }
+  }
+}
+
+.h-full {
+  height: 100%;
+}
+
+.cart-row:nth-child(odd) {
+  background-color: rgba(209, 166, 166, 0.3);
+}
+
+.cart-row:nth-child(even) {
+  background-color: #f4f4f4;
+}
+
+.cart-row {
+  padding: 5px 0px;
+}
+
+.order-row:nth-child(odd) {
+  background-color: rgba(209, 166, 166, 0.3);
+}
+
+.order-row:nth-child(even) {
+  background-color: rgba(167, 193, 206, 0.3);
+}
+
+#productsDetailsImageContainer {
+  padding: 3px;
+  min-height: 620px;
+  @media ($phone) {
+    min-height: 230px;
+  }
+  @media ($min_tablet) {
+    min-height: 300px;
+  }
+  @media ($tablet) {
+  }
+  @media ($min_laptopI) and ($min_laptopF) {
+    min-height: 230px;
+  }
+
+  @media ($laptop) {
+    min-height: 420px;
+  }
+}
+#productDetailsImageCol {
+  position: relative; 
+
+  @media ($phone) {
+  }
+  @media ($laptop) {
+  }
+
+  #productDetailsImageDiv {
+    position: absolute;
+  }
+}
+
+.search-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  
+  .search-div {
+   background-color: #fff;
+   width: 100%;
+   height: 100vh;
+   padding: 2px 13px;
+
+  @media ($tablet) {
+   width: 70vw;
+  }
+  @media ($min_laptopI) and ($min_laptopF) {
+    width: 60vw;
+   
+  }
+
+  @media ($laptop) {
+    width: 50vw; 
+  }
+
+  .search-input {
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid rgb(202, 199, 199); 
+    width: 100%;
+  }
+  .closeBtn {
+    border: none;
+    background-color: inherit;
+  }
+
+  }
+}
+
+.text-serif {
+  font-family: serif;
+}
+
+.authDiv {
+
+  @media($phone){
+    width: 100%;
+    padding: 40px;
+  }
+
+    input {
+    width: 100%;
+    @media($phone){
+      width: 70%;
+    }
+  }
+}

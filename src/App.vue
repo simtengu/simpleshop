@@ -1,30 +1,51 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+<Spinner v-if="isLoading" />
+<Header />
+<router-view />
+<Footer />
 </template>
+<script>
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
+import Spinner from "./components/Spinner.vue";
+import { mapState,mapActions } from "vuex";
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+export default ({
+components: {
+  Header,
+  Footer,
+  Spinner
+  
+},
+  computed: {
+    ...mapState(['isLoading','access_token'])
+  },
+data(){
+  return {
+    
+  }
+},
+methods:{
+ ...mapActions(["getProducts", "getCategories","getOrders"]),
+ ...mapActions('cartModule',["getOrders"]),
 
-#nav {
-  padding: 30px;
-}
+},
+  created() {
+    this.getProducts();
+    this.getCategories();
+    if (this.access_token) {
+      this.getOrders();
+    }
+    
+  },
+  mounted(){
+     this.getProducts();  
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  }
+})
+</script>
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+
+<style scoped>
+
 </style>
