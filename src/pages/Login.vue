@@ -69,7 +69,7 @@
 
             <div class="form-group my-4">
               <input
-                v-model="cpassword"
+                v-model="Cpassword"
                 type="password"
                 id="cpassword"
                 placeholder="confirm password"
@@ -165,7 +165,8 @@ export default {
         password: this.password,
       };
       if (this.name && this.email && this.password) {
-
+        console.log('pwd ',this.password);
+        console.log('cpwd ',this.Cpassword);
       if (this.password === this.Cpassword) {
         this.register(data);
       }else{
