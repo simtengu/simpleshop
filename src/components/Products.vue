@@ -73,7 +73,7 @@ export default {
         this.selectedProducts = filteredProducts;
         this.category = category_name;
         console.log("selected products by category ",this.selectedProducts);
-        console.log("selected products array length ",this.selectedProducts.length);
+        console.log("selected productss array length ",this.selectedProducts.length);
         
       }else {
         alert('nothing was found')
