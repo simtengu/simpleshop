@@ -169,32 +169,7 @@ export default createStore({
       commit('setWeeklyOffer', product);
       commit('setWeeklyOfferImg', product.images[0].name);
     }
-    ,
-    async register({ commit }, info) {
 
-      try {
-
-
-        commit('setIsLoading');
-        let response = await axios.post('https://simpleshop.chuobusiness.com/api/register', info);
-        let data = await response.data;
-        if (response.status === 201) {
-          let auth_data = {
-            user: data.user,
-            token: data.access_token
-          }
-          localStorage.setItem('user_token', data.access_token);
-          localStorage.setItem('auth_user_id', data.user.id);
-          console.log('server response data ', data);
-          commit('setAccessToken', auth_data);
-          commit('unSetIsLoading');
-        }
-
-      } catch (error) {
-        commit('unSetIsLoading');
-        console.log("ERROR ..message = ", error.message);
-      }
-    },
   },
   getters: {},
   modules: {

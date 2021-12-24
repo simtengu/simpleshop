@@ -117,7 +117,7 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["login", "register"]),
+    ...mapActions(["login"]),
     ...mapMutations(["setIsLoading", "unSetIsLoading","setAccessToken"]),
     submitLoginForm: async function () {
       let data = {
@@ -158,17 +158,39 @@ export default {
  
 
     },
-    submitRegistrationForm: function () {
+    submitRegistrationForm: async function () {
       let data = {
         name: this.name,
         email: this.email,
         password: this.password,
       };
       if (this.name && this.email && this.password) {
-        console.log('pwd ',this.password);
-        console.log('cpwd ',this.Cpassword);
+        
       if (this.password === this.Cpassword) {
-        this.register(data);
+      try {
+
+        this.setIsLoading();
+        let response = await axios.post('https://simpleshop.chuobusiness.com/api/register', data);
+        let info = await response.data;
+        if (response.status === 201) {
+          let auth_data = {
+            user: info.user,
+            token: info.access_token
+          }
+          localStorage.setItem('user_token', info.access_token);
+          localStorage.setItem('auth_user_id', info.user.id);
+          console.log('server response data ', info);
+          this.setAccessToken(auth_data);
+          this.unSetIsLoading();
+           this.$router.push('/');
+        }
+
+      } catch (error) {
+        this.unSetIsLoading();
+        console.log("ERROR ..message = ", error.message);
+      }
+
+
       }else{
         alert("password doesn't match")
       }
