@@ -81,7 +81,7 @@ export default {
         try {
           this.setIsLoading();
           const rs = await axios.patch(
-            `https://simpleshop.chuobusiness.com/api/products/${data.id}`,data,
+            `http://onlinestore.mbeyamilk.com/api/products/${data.id}`,data,
             {headers:{ Authorization: `Bearer ${this.access_token}` }}
           );
           this.getUserProducts();

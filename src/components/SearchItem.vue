@@ -73,7 +73,7 @@ export default {
         try {
           this.isLoading = true;
           let rs = await axios(
-            `https://simpleshop.chuobusiness.com/api/search_product/${this.searchItem}`
+            `http://onlinestore.mbeyamilk.com/api/search_product/${this.searchItem}`
           );
           let products = await rs.data;
           console.log(products.data);

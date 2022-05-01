@@ -23,7 +23,7 @@ export default {
     actions: {
         getPosts(context) {
             context.commit('setIsLoading');
-            axios.get("http://localhost/chuobusiness/public/api/posts")
+            axios.get("http://onlinestore.mbeyamilk.com/api/posts")
                 .then(rs => {
                     context.commit('unSetIsLoading');
                     context.commit('setPosts', rs.data);
@@ -40,7 +40,7 @@ export default {
                 body
             };
             context.commit('setIsLoading');
-            axios.post("http://localhost/chuobusiness/public/api/posts",data)
+            axios.post("http://onlinestore.mbeyamilk.com/api/posts",data)
                 .then(rs => {
                     context.commit('unSetIsLoading');
                     console.log(rs.statusText);
@@ -57,7 +57,7 @@ export default {
                 title,
                 body
             };
-            axios.patch("http://localhost/chuobusiness/public/api/post/14",data)
+            axios.patch("http://onlinestore.mbeyamilk.com/api/post/14",data)
                 .then(rs => {
                     commit('unSetIsLoading');
                     console.log(rs.statusText);
@@ -67,7 +67,7 @@ export default {
         },
         deleteData({commit}) {
             commit('setIsLoading');
-            axios.delete("http://localhost/chuobusiness/public/api/post/14")   
+            axios.delete("http://onlinestore.mbeyamilk.com/api/post/14")   
                 .then(rs => {
                     commit('unSetIsLoading');
                     console.log(rs.statusText);

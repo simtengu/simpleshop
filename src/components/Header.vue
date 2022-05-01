@@ -44,7 +44,7 @@
 
     <div
       style="min-height: 100px"
-      class="container-fluid bg-black d-flex flex-column justify-content-center"
+      class="container-fluid bg-black d-flex flex-column justify-content-center pb-4 pt-1"
     >
       <div class="container">
         <div class="row">
@@ -52,7 +52,7 @@
             <div class="d-flex align-items-end">
               <router-link class="text-decoration-none" to="/">
                 <h2
-                  class="text-light font-weight-bold"
+                  class="text-light font-weight-bold brand"
                   style="
                     font-weight: 5em;
                     font-family: 'Montserrat', sans-serif;
@@ -83,12 +83,13 @@
                 <h1 class="text-light font-weight-bold">
                   <router-link
                     to="/cart"
-                    class="text-decoration-none btn text-danger font-20"
+                    class="text-decoration-none   text-danger font-20"
                     >
-                    <i class="fas fa-shopping-cart"></i>
+                    <div class="d-flex ms-4 ms-md-0"><i class="fas fa-shopping-cart"></i>
                     <sup class="text-light"
                       >{{ $store.state.cartModule.total_quantity }}
-                    </sup>
+                    </sup></div>
+
                   </router-link>
                 </h1>
               </div>
@@ -125,7 +126,7 @@ export default {
     async logout() {
       try {
         const rs = await axios(
-          "https://simpleshop.chuobusiness.com/api/logout",
+          "http://onlinestore.mbeyamilk.com/api/logout",
           {
             headers: {
               Authorization: `Bearer ${this.access_token}`,

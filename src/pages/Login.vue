@@ -129,7 +129,7 @@ export default {
 
       try {
         this.setIsLoading();
-        let rs = await axios.post("https://simpleshop.chuobusiness.com/api/signin", data);
+        let rs = await axios.post("http://onlinestore.mbeyamilk.com/api/signin", data);
         let info = await rs.data;
         if (rs.status === 200) {
           let auth_data = {
@@ -170,7 +170,7 @@ export default {
       try {
 
         this.setIsLoading();
-        let response = await axios.post('https://simpleshop.chuobusiness.com/api/register', data);
+        let response = await axios.post('http://onlinestore.mbeyamilk.com/api/register', data);
         let info = await response.data;
         if (response.status === 201) {
           let auth_data = {

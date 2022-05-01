@@ -70,7 +70,7 @@ export default createStore({
     getProducts(context) {
       context.commit("setIsLoading");
       axios
-        .get("https://simpleshop.chuobusiness.com/api/products")
+        .get("http://onlinestore.mbeyamilk.com/api/products")
         .then((rs) => {
           context.commit("unSetIsLoading");
           context.commit("setProducts", rs.data.data);
@@ -87,7 +87,7 @@ export default createStore({
       try {
 
         context.commit("setIsLoading");
-        await axios.post("https://simpleshop.chuobusiness.com/api/products", productData,
+        await axios.post("http://onlinestore.mbeyamilk.com/api/products", productData,
           { headers: { Authorization: `Bearer ${context.state.access_token}` } });
         context.commit("unSetIsLoading");
         alert("A product was added successfully")
@@ -105,7 +105,7 @@ export default createStore({
         body,
       };
       axios
-        .patch("https://simpleshop.chuobusiness.com/api/post/14", data)
+        .patch("http://onlinestore.mbeyamilk.com/api/post/14", data)
         .then((rs) => {
           commit("unSetIsLoading");
           console.log(rs.statusText);
@@ -118,7 +118,7 @@ export default createStore({
     deleteData({ commit }) {
       commit("setIsLoading");
       axios
-        .delete("https://simpleshop.chuobusiness.com/api/post/14")
+        .delete("http://onlinestore.mbeyamilk.com/api/post/14")
         .then((rs) => {
           commit("unSetIsLoading");
           console.log(rs.statusText);
@@ -130,7 +130,7 @@ export default createStore({
     },
     async getCategories({ commit }) {
       try {
-        const rs = await axios('https://simpleshop.chuobusiness.com/api/categories');
+        const rs = await axios('http://onlinestore.mbeyamilk.com/api/categories');
         const categories = await rs.data.data;
         commit("addCategories", categories);
         console.log("all categories", categories);
@@ -140,7 +140,7 @@ export default createStore({
     },
     async getUserProducts({ commit, state }) {
       commit('setIsLoading');
-      let rs = await axios('https://simpleshop.chuobusiness.com/api/user/products', { headers: { Authorization: `Bearer ${state.access_token}` } });
+      let rs = await axios('http://onlinestore.mbeyamilk.com/api/user/products', { headers: { Authorization: `Bearer ${state.access_token}` } });
       let products = await rs.data.data;
       console.log(products);
       commit('pushUserProducts', products);
@@ -149,7 +149,7 @@ export default createStore({
     },
     async removeProduct({ commit, state }, product_id) {
       commit('setIsLoading');
-      const rs = await axios.delete(`https://simpleshop.chuobusiness.com/api/products/${product_id}`, {
+      const rs = await axios.delete(`http://onlinestore.mbeyamilk.com/api/products/${product_id}`, {
         headers: {
           Authorization: `Bearer ${state.access_token}`
         }
@@ -163,7 +163,7 @@ export default createStore({
 
     },
     async getWeeklyOfferProduct({ commit }) {
-      let rs = await axios('https://simpleshop.chuobusiness.com/api/weeklyOffer');
+      let rs = await axios('http://onlinestore.mbeyamilk.com/api/weeklyOffer');
       let product = await rs.data.data;
       console.log("weekly product", product);
       commit('setWeeklyOffer', product);

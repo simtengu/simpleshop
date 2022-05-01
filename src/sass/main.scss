@@ -157,6 +157,15 @@ p {
 
 .cart-row {
   padding: 5px 0px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  @media ($phone) {
+   justify-content: space-around;
+  }
+
+             
 }
 
 .order-row:nth-child(odd) {
@@ -258,5 +267,50 @@ p {
     @media($phone){
       width: 70%;
     }
+  }
+}
+
+.cartImgDiv{ 
+    width: 100px;
+  @media($phone){
+    width: 95px;
+    
+  }
+}
+
+
+.cartBtnsDiv {
+    button {
+      color: #c20a34;
+      background-color: transparent;
+      border: 0px;
+
+    }
+
+    @media($phone){
+
+    
+  }
+
+       label {
+        color: #c20a34;
+      } 
+ 
+}  
+
+.cartItemDetailsDiv {
+  p {
+    font-size: 20px;
+
+   @media($phone){
+    font-size: 14px;
+    
+  }
+  }
+}
+.brand {
+   @media($phone){
+    margin: 10px 0px 10px 0px;
+    
   }
 }

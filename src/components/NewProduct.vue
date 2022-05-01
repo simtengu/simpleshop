@@ -133,9 +133,17 @@ export default {
       let data = this.productData;
       if (data.name && data.desc && data.price && data.category_id) {
         await this.postProduct(data);
-        this.productData = [];
+        this.productData = {
+        formId: Math.floor(Math.random() * 1000) + new Date().getSeconds(),
+        name: "",
+        price: null,
+        desc: "",
+        category_id: null,
+        
+      };
         this.productImages = [];
           this.getUserProducts();
+          
       
       } else {
         alert("make sure you have filled all inputs");
@@ -149,14 +157,14 @@ export default {
       formData.append("formId", this.productData.formId);
       try {
         let rs = await axios.post(
-          "https://simpleshop.chuobusiness.com/api/upload/product_image",
+          "http://onlinestore.mbeyamilk.com/api/upload/product_image",
           formData
         );
         if (rs.statusText === "OK") {
           let img = rs.data.image;
-          img.name = "https://simpleshop.chuobusiness.com/images/" + img.name;
+          img.name = "http://onlinestore.mbeyamilk.com/images/" + img.name;
           this.productImages.push(img);
-          console.log(this.productImages);
+          console.log("product images",this.productImages);
         }
         this.unSetIsLoading();
       } catch (error) {
@@ -167,7 +175,7 @@ export default {
     handleImgDelete: async function (id) {
       this.setIsLoading();
       let url =
-        "https://simpleshop.chuobusiness.com/api/product_image/delete/" + id;
+        "http://onlinestore.mbeyamilk.com/api/product_image/delete/" + id;
       try {
         let rs = await axios.delete(url);
         console.log(rs.data);

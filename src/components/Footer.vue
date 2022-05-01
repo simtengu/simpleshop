@@ -11,7 +11,7 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="search product"
+                placeholder="enter email"
               />
               <button style="font-family: 'Playfair Display', serif" type="submit" class="btn btn-danger">Subscribe</button>
             </div>

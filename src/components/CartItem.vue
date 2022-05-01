@@ -2,32 +2,30 @@
             <div
               class="
                 cart-row
-                d-flex
-                justify-content-around
-                align-items-center
                 my-1
                 px-1
               "
             >
-              <div class="text-capitalize col-md-4">
+              <div class="text-capitalize d-flex justify-content-center align-items-center">
   <div class="cartImgDiv">
       <img :src="item.image" alt="item image" class="img-fluid img-thumbnail">
   </div>
+              <div class="row cartBtnsDiv flex-column justify-content-center ms-1">
+                <button @click="addItem(item)" class=" ">+</button>
+                <button class="">{{item.quantity}}</button>
+                <button @click="reduceItem(item.id)" class="">-</button>
               </div>
 
-              <div class="row flex-column font-20 text-capitalize col-md-6">
+              </div>
+
+              <div class="row cartItemDetailsDiv flex-column text-capitalize ms-sm-2 ms-lg-4">
                 <p class="m-0">{{item.name}}</p>
                 <p class="m-0">
                   price: <span class="text-app">{{ item.price }} Tsh</span>
                 </p>
                 <p class="m-0">
-                  total amount: <span class="text-app">{{ item.total_amount }} Tsh</span>
+                  total: <span class="text-app">{{ item.total_amount }} Tsh</span>
                 </p>
-              </div>
-              <div class="row flex-column text-center col-md-2">
-                <button @click="addItem(item)" class="p-0 m-0 text-app">+</button>
-                <label for="qnt" class="text-app font-12">{{item.quantity}}</label>
-                <button @click="reduceItem(item.id)" class="p-0 m-0 text-app">-</button>
               </div>
             </div>
 </template>
@@ -47,7 +45,5 @@ import { mapMutations } from "vuex";
 </script>
 
 <style scoped>
-.cartImgDiv{
-    width: 100px;
-}
+
 </style>
